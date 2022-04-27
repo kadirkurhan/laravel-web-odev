@@ -16,8 +16,7 @@
 </head>
 
 <body id="test" class="bg-gray-200">
-    asd
-
+    Hello world
 </body>
 
 </html>
