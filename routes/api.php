@@ -20,8 +20,8 @@ use App\Http\Controllers\EntryController;
 // public routes
 
 // Auth
-Route::post('/register',[AuthController::class,'register']);
-Route::post('/login',[AuthController::class,'login']);
+Route::post('/register',[AuthController::class,'register'])->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class]);
+Route::post('/login',[AuthController::class,'login'])->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class]);
 
 // Topics
 Route::get('/topics',[TopicController::class,'index']);
