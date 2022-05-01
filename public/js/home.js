@@ -90,16 +90,14 @@ jQuery(document).ready(async function () {
                 (entry, i) => `
                 ${
                     i !== 0
-                        ? '<hr style="margin-top:24px;margin-bottom:24px;" class="border-gray-400"/>'
+                        ? '<div class="my-8 border-t-2 border-gray-200"></div>'
                         : ""
                 }
-                        <p style="max-width:500px;" class="max-w-xs text-md text-gray-700 mt-4">
+                        <p class="max-w-lg text-md text-gray-700 mt-4">
                 ${entry.entry}
             </p>
-            <p style="text-align:right;" class="text-right text-gray-800 mt-4">${
-                entry.user.name
-            }</p>
-            <p style="text-align:right;" class="text-xs text-gray-500 mt-2">${dayjs(
+            <p class="text-right text-gray-800 mt-4">${entry.user.name}</p>
+            <p class="text-right text-xs text-gray-500 mt-2">${dayjs(
                 entry.created_at
             ).format("DD.MM.YYYY HH:mm")}</p>
         `
@@ -107,12 +105,11 @@ jQuery(document).ready(async function () {
             jQuery("#entries").html([topicHeader, ...topicDetailEntries]);
             return;
         }
-        // const = entryList
 
         const homeEntries = _.uniq(entryList, (i) => i.topic.id).map(
             (entry, i) => `${
                 i !== 0
-                    ? '<hr style="margin-top:24px;margin-bottom:24px;" class="border-gray-400"/>'
+                    ? '<div class="my-8 border-t-2 border-gray-200"></div>'
                     : ""
             }
 							<a href="/topic/${
@@ -121,13 +118,13 @@ jQuery(document).ready(async function () {
 								${entry.topic.topicname}
 							</a>
 
-							<p style="max-width:500px;" class="max-w-xs text-md text-gray-700 mt-4">
+							<p  class="max-w-lg text-md text-gray-700 mt-4">
 								${truncate(entry.entry, 150)}
 							</p>
-                            <p style="text-align:right;" class="text-right text-gray-800 mt-4">${
+                            <p class="text-right text-gray-800 mt-4">${
                                 entry.user.name
                             }</p>
-                            <p style="text-align:right;" class="text-xs text-gray-500 mt-2">${dayjs(
+                            <p class="text-right text-xs text-gray-500 mt-2">${dayjs(
                                 entry.created_at
                             ).format("DD.MM.YYYY HH:mm")}</p>
 						`

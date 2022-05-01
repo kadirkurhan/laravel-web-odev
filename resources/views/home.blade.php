@@ -9,12 +9,10 @@
 
 <body class="bg-gray-100">
 	<x-navbar />
-
-
 	<div class="flex justify-center w-full mt-12">
-		<div class="flex justify-between px-4 lg:px-32 xl:px-48 min-w-full">
+		<div class="flex flex-col lg:flex-row justify-between px-4 lg:px-32 xl:px-48 min-w-full">
 			<x-sidebar />
-			<div id="entries" class="px-8 py-2"></div>
+			<div id="entries" class="px-8 py-2 max-w-2xl"></div>
 			<x-ads />
 		</div>
 	</div>
