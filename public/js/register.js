@@ -24,7 +24,11 @@ jQuery(document).ready(function () {
                 password_confirmation: password,
             },
             success: function (data) {
-                if (data.token) localStorage.setItem("AUTH_TOKEN", data.token);
+                if (data.token && data.user) {
+                    localStorage.setItem("AUTH_TOKEN", data.token);
+                    localStorage.setItem("USER", data.user);
+                    window.location.href = "/";
+                }
             },
             error: function (error) {
                 console.log(error.responseJSON);

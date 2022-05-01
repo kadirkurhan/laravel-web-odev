@@ -30,7 +30,7 @@ class EntryController extends Controller
             'entry' => 'required'
         ]);
 
-        Topic::where('id', $request['topicid'])->update(['numberofentries' => Topic::raw('numberofentries + 1')]);
+        Topic::where('id', $request['topicid'],$request['userid'])->update(['numberofentries' => Topic::raw('numberofentries + 1')]);
 
         return Entry::create($request->all());
     }
