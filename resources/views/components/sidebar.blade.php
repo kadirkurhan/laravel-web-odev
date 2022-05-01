@@ -6,3 +6,4 @@
     </div>
     <div id="topics"></div>
 </div>
+<hr class="my-8 lg:hidden" />

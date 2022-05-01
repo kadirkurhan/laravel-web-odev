@@ -26,7 +26,7 @@ jQuery(document).ready(function () {
             success: function (data) {
                 if (data.token && data.user) {
                     localStorage.setItem("AUTH_TOKEN", data.token);
-                    localStorage.setItem("USER", data.user);
+                    localStorage.setItem("USER", JSON.stringify(data.user));
                     window.location.href = "/";
                 }
             },

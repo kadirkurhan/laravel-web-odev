@@ -93,7 +93,7 @@ jQuery(document).ready(async function () {
                         ? '<div class="my-8 border-t-2 border-gray-200"></div>'
                         : ""
                 }
-                        <p class="max-w-lg text-md text-gray-700 mt-4">
+                        <p class="max-w-lg text-md text-gray-700 mt-4 overflow-hidden text-ellipsis">
                 ${entry.entry}
             </p>
             <p class="text-right text-gray-800 mt-4">${entry.user.name}</p>
@@ -118,7 +118,7 @@ jQuery(document).ready(async function () {
 								${entry.topic.topicname}
 							</a>
 
-							<p  class="max-w-lg text-md text-gray-700 mt-4">
+							<p  class="max-w-lg text-md text-gray-700 mt-4 overflow-hidden text-ellipsis">
 								${truncate(entry.entry, 150)}
 							</p>
                             <p class="text-right text-gray-800 mt-4">${

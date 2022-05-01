@@ -17,7 +17,7 @@ class CreateEntriesTable extends Migration
             $table->id();
             $table->integer('userid');
             $table->integer('topicid');
-            $table->string('entry');
+            $table->longtext('entry');
             $table->timestamps();
         });
     }
