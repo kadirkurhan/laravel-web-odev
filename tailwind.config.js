@@ -5,7 +5,14 @@ module.exports = {
         "./resources/**/*.vue",
     ],
     theme: {
-        extend: {},
+        extend: {
+            theme: {
+                fontFamily: {
+                    sans: ["Inter"],
+                    serif: ["Inter"],
+                },
+            },
+        },
     },
     plugins: [],
 };
