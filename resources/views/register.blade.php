@@ -5,38 +5,41 @@
     <x-header />
     <title>Register</title>
     <script>
-        jQuery(document).ready(function(){
-
-            jQuery("#registerSubmit").click(function (e) {
-            jQuery.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-                }
+        jQuery(document).ready(function () {
+        jQuery("#registerSubmit").click(function (e) {
+                jQuery.ajaxSetup({
+                    headers: {
+                        "X-CSRF-Token": jQuery('meta[name="csrf-token"]').attr(
+                            "content"
+                        ),
+                    },
                 });
-                
-    console.log("test");
-    
-    const name = jQuery("#name").val();
-    const email = jQuery("#email").val();
-    const password = jQuery("#password").val();
-    jQuery.ajax({
-        type: "POST",
-        url: 'http://localhost:8000/api/register',
-        data: {
-            name,
-            _token: jQuery('meta[name="csrf-token"]').attr('content'),
-            email,
-            password,
-        },
-        success: function (data) {
-            alert(data); // show response from the php script.
-        },
-        error: function (error) {
-            // alert(JSON.stringify(error));
-        },
+
+                const name = jQuery("#name").val();
+                const email = jQuery("#email").val();
+                const password = jQuery("#password").val();
+
+                jQuery.ajax({
+                    type: "POST",
+                    url: "http://localhost:8000/api/register",
+                    dataType: "json",
+                    data: {
+                        name,
+                        email,
+                        password,
+                        password_confirmation: password,
+                    },
+                    success: function (data) {
+                        console.log(data)
+                        alert(data); // show response from the php script.
+                    },
+                    error: function (error) {
+                        // alert(JSON.stringify(error));
+                    },
+                });
     });
 });
-});
+
     </script>
 
 

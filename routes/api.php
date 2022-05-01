@@ -20,12 +20,9 @@ use App\Http\Controllers\EntryController;
 // public routes
 
 // Auth
-// Route::post('/register',[AuthController::class,'register']);
-// Route::post('/login',[AuthController::class,'login']);
-Route::group(['middleware' => ['web']], function () {
-    Route::post('/register',[AuthController::class,'register']);
-    Route::post('/login',[AuthController::class,'login']);
-});
+Route::post('/register',[AuthController::class,'register']);
+Route::post('/login',[AuthController::class,'login']);
+
 // Topics
 Route::get('/topics',[TopicController::class,'index']);
 Route::get('topics/one/{id}',[TopicController::class,'show']);
