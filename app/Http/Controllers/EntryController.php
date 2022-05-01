@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Entry;
+use App\Models\User;
 use App\Models\Topic;
 
 class EntryController extends Controller
@@ -15,7 +16,12 @@ class EntryController extends Controller
      */
     public function index()
     {
-        return Entry::all();
+        $entries = Entry::all();
+        $entriesWithUser = $entries->map(function($item, $key) { 
+            $user = User::find($item->userid);
+            return array_merge($item->toArray(), ['user' => $user]);
+        });
+        
     }
 
     /**
