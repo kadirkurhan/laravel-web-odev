@@ -10,6 +10,7 @@
     rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js">
 </script>
+<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js">
 </script>

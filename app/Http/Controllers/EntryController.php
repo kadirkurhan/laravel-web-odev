@@ -21,7 +21,8 @@ class EntryController extends Controller
             $user = User::find($item->userid);
             return array_merge($item->toArray(), ['user' => $user]);
         });
-        
+
+        return $entriesWithUser;
     }
 
     /**

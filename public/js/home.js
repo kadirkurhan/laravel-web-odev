@@ -96,6 +96,12 @@ jQuery(document).ready(async function () {
                         <p style="max-width:500px;" class="max-w-xs text-md text-gray-700 mt-4">
                 ${entry.entry}
             </p>
+            <p style="text-align:right;" class="text-right text-gray-800 mt-4">${
+                entry.user.name
+            }</p>
+            <p style="text-align:right;" class="text-xs text-gray-500 mt-2">${dayjs(
+                entry.created_at
+            ).format("DD.MM.YYYY HH:mm")}</p>
         `
             );
             jQuery("#entries").html([topicHeader, ...topicDetailEntries]);
@@ -118,6 +124,12 @@ jQuery(document).ready(async function () {
 							<p style="max-width:500px;" class="max-w-xs text-md text-gray-700 mt-4">
 								${truncate(entry.entry, 150)}
 							</p>
+                            <p style="text-align:right;" class="text-right text-gray-800 mt-4">${
+                                entry.user.name
+                            }</p>
+                            <p style="text-align:right;" class="text-xs text-gray-500 mt-2">${dayjs(
+                                entry.created_at
+                            ).format("DD.MM.YYYY HH:mm")}</p>
 						`
         );
         jQuery("#entries").html(homeEntries);
