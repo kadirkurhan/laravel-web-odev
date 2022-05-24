@@ -48,6 +48,10 @@ Route::group(['middleware'=>['auth:sanctum']],function(){
 
     // Auth
     Route::post('logout',[AuthController::class,'logout']);
+    
+    // Users
+    Route::delete('/users/{id}',[AuthController::class,'destroy']);
+
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

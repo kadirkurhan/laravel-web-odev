@@ -114,7 +114,7 @@ jQuery(document).ready(async function () {
             }
 							<a href="/topic/${
                                 entry.topic.id
-                            }" class="text-2xl font-semibold text-gray-800 hover:underline cursor-pointer">
+                            }" class="text-2xl font-semibold text-gray-800 hover:underline cursor-pointer" style="display:block;min-width:520px;">
 								${entry.topic.topicname}
 							</a>
 

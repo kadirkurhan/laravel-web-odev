@@ -61,4 +61,16 @@ class AuthController extends Controller
             'message' => 'logged out'
         ];
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        return User::find($id)->delete();
+    }
+
 }
