@@ -28,6 +28,8 @@ jQuery(document).ready(function () {
                 }
             },
             error: function (error) {
+                if (error.responseJSON.message)
+                    alert("Hata: " + error.responseJSON.message);
                 console.log(error.responseJSON);
             },
         });

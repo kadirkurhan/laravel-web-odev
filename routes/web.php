@@ -37,6 +37,7 @@ Route::get('/dashboard', function () {
     $entries = Entry::all();
     $topics = Topic::all();
     $users = User::query()->where('id', '!=' , 0)->orWhereNull('id')->get();
+    $users = $users->where('status', '!=' , -1);
     return view('dashboard',['entries' => $entries, 'topics' => $topics, 'users' => $users]);
 });
 

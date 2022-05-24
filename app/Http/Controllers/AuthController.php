@@ -38,13 +38,16 @@ class AuthController extends Controller
         ]);
 
         $user = User::where('email',$fields['email'])->first();
-        
+      
+        if($user->status == -1) {
+            return response(['message'=>'User is banned'],401);
+        }
+
         if(!$user || !Hash::check($fields['password'],$user->password)){
             return response([
                 'message'=>'wrong email or password'
             ],401);
         }
-
         $token = $user->createToken('myapptoken')->plainTextToken;
         $response = [
             'user'=>$user,
@@ -68,9 +71,11 @@ class AuthController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
-        return User::find($id)->delete();
+        $user = User::find($id);
+        $user->update($request->all());
+        return $user;
     }
 
 }

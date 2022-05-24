@@ -50,7 +50,7 @@ Route::group(['middleware'=>['auth:sanctum']],function(){
     Route::post('logout',[AuthController::class,'logout']);
     
     // Users
-    Route::delete('/users/{id}',[AuthController::class,'destroy']);
+    Route::post('/users/{id}',[AuthController::class,'destroy']);
 
 });
 
